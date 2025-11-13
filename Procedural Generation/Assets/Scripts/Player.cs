@@ -3,27 +3,28 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+
+    int speed;
     void Start()
     {
+        speed = 10;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        Vector2 dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
+
+        Input.GetAxis("Horizontal");
+
+
+        rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
+
+
+        if (dir.y > 0)
         {
-            rb.linearVelocity = (new Vector2(3, 0));
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 12);
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            rb.linearVelocity = (new Vector2(-3, 0));
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            rb.linearVelocity = (new Vector2(0, 5));
-        }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+        Debug.Log(dir);
     }
 }

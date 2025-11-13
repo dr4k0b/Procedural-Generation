@@ -20,13 +20,18 @@ public class GlobalInformation : MonoBehaviour
 
     [SerializeField] public bool noise;
 
-    public float GenerateIndex(int x, int y)
+    public float GenerateIndexGrey(int x, int y)
     {
         float xCord = (float)x / width * scale + xOffset;
         float yCord = (float)y / height * scale + yOffset;
 
         return Mathf.PerlinNoise(xCord, yCord);
+    }
+    public float GenerateIndexRed(int x, int y)
+    {
+        float xCord = (float)x / width * 30 + xOffset;
+        float yCord = (float)y / height * 30 + yOffset;
 
-        //  return (sample >= threshold - yCord / depth) ? 1 : 0;
+        return Mathf.PerlinNoise(xCord, yCord);
     }
 }

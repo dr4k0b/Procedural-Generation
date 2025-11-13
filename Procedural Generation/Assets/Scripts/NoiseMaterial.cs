@@ -25,7 +25,7 @@ public class NoiseMaterial : MonoBehaviour
         {
             for (int y = 0; y < g.height; y++)
             {
-                float i = g.GenerateIndex(x, y);
+                float i = g.GenerateIndexGrey(x, y);
 
                 Color color = new Color(i, i, i);
 

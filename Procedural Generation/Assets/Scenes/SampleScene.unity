@@ -207,7 +207,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1008, y: 1002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -250,8 +250,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &277355782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.10196079, g: 0.10980393, b: 0.16862746, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -635,30 +635,30 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 1.8e-44
+      e00: 3.8131122e+21
       e01: 0
-      e02: 1.4775658e+29
-      e03: -2.0401127e+10
-      e10: 0
+      e02: 3.8131032e+21
+      e03: 8.7622175e+19
+      e10: 2.54e-43
       e11: 0
-      e12: 1.95e-43
-      e13: 8.32e-43
-      e20: 1.6192256e+31
+      e12: 2.54e-43
+      e13: 8.06e-43
+      e20: 4.9515947e-13
       e21: 0
-      e22: 0.2523799
-      e23: 6.2208346e-28
+      e22: -1.69793e-40
+      e23: -1.7335232e-18
       e30: 4.5908e-41
       e31: 0
-      e32: 8.34e-43
-      e33: 8.34e-43
+      e32: 8.09e-43
+      e33: 8.06e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: -7.088991e-13, g: -7.088991e-13, b: -7.088991e-13, a: -7.088991e-13}
+    m_Data: {r: 6.5239e-41, g: 6.5239e-41, b: 6.5239e-41, a: 6.5239e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -26, y: -11, z: 0}
-  m_Size: {x: 38, y: 14, z: 1}
+  m_Size: {x: 1026, y: 1011, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -853,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1913644556
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -966,8 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ceb8638450596d40a83cc30637296e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalInformation
-  width: 256
-  height: 256
+  width: 128
+  height: 128
   scale: 20
   xOffset: 627
   yOffset: 516
@@ -1020,6 +1020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GenerateTerrain
   map: {fileID: 1457190153}
   tile: {fileID: 11400000, guid: 4ef7ff4af1024ef479dbb73483f7fdfc, type: 2}
+  tileRed: {fileID: 11400000, guid: 05cc13afeaf12eb41a2b7b19423810b8, type: 2}
+  DecoGrey: {fileID: 11400000, guid: 1f3163a156b9f014f91b534a68072302, type: 2}
+  DecoRed: {fileID: 11400000, guid: 3d40abde7f5a5b44b9693067408d8439, type: 2}
   player: {fileID: 277355777}
   renderDistance: 50
 --- !u!4 &2106430601

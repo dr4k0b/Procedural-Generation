@@ -8,6 +8,11 @@ public class GenerateTerrain : MonoBehaviour
 {
     public Tilemap map;
     public RuleTile tile;
+    public RuleTile tileRed;
+    public RuleTile DecoGrey;
+    public RuleTile DecoRed;
+
+
     public GameObject player;
     GlobalInformation g;
     public int renderDistance;
@@ -52,9 +57,24 @@ public class GenerateTerrain : MonoBehaviour
         {
             for (int y = yStart; y < yEnd; y++)
             {
-                if (g.GenerateIndex(x, y) > g.threshold)
+                if (g.GenerateIndexGrey(x, y) > g.threshold)
                 {
-                    map.SetTile(new Vector3Int(x, y), tile);
+                    if (g.GenerateIndexRed(x, y) > .5f)
+                    {
+                        map.SetTile(new Vector3Int(x, y), tileRed);
+                        if (!(g.GenerateIndexRed(x, y + 1) > .5f))
+                        {
+                            map.SetTile(new Vector3Int(x, y + 1), DecoRed);
+                        }
+                    }
+                    else
+                    {
+                        map.SetTile(new Vector3Int(x, y), tile);
+                        if (!(g.GenerateIndexGrey(x, y + 1) > .5f))
+                        {
+                            map.SetTile(new Vector3Int(x, y + 1), DecoGrey);
+                        }
+                    }
                 }
             }
         }
