@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static System.Random;
 
 public class GlobalInformation : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class GlobalInformation : MonoBehaviour
 
     [SerializeField] public bool noise;
 
+    private void Awake()
+    {
+        System.Random rand = new System.Random();
+         xOffset = rand.Next(100, 100000);
+         yOffset = rand.Next(100, 100000);
+    }
     public float GenerateIndexGrey(int x, int y)
     {
         float xCord = (float)x / width * scale + xOffset;

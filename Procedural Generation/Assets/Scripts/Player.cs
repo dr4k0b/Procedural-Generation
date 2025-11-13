@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+    public GameObject bullet;
 
     int speed;
     void Start()
@@ -13,18 +14,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector2 dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
-
-        Input.GetAxis("Horizontal");
-
 
         rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
 
-
-        if (dir.y > 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 12);
+            Instantiate(bullet, transform.position, transform.rotation);
         }
-        Debug.Log(dir);
     }
 }

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 277355782}
   - component: {fileID: 277355781}
   - component: {fileID: 277355780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f3129d19a35e429df865a1899513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  bullet: {fileID: 733910111803975312, guid: b2a6fc7991b331743822ab4a7ee2749b, type: 3}
 --- !u!50 &277355781
 Rigidbody2D:
   serializedVersion: 5
@@ -240,7 +241,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -310,7 +311,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -533,9 +534,10 @@ GameObject:
   - component: {fileID: 1457190156}
   - component: {fileID: 1457190155}
   - component: {fileID: 1457190154}
+  - component: {fileID: 1457190157}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,6 +792,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1457190157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457190150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af1b28eb5ceddb40ad6c7bf7d1db2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeleteTiles
 --- !u!1 &1463704601
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +816,7 @@ GameObject:
   - component: {fileID: 1463704602}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -971,7 +985,7 @@ MonoBehaviour:
   scale: 20
   xOffset: 627
   yOffset: 516
-  threshold: 0.524
+  threshold: 0.348
   depth: 0
   noise: 0
 --- !u!4 &2001141472
